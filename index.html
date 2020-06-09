@@ -1,34 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scripts/scriptT-Rex.js"></script>    
+    <!-- <meta charset="UTF-8"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Practica Javascript</title>
-    <style>
-        canvas{
-            border: 1px solid black;
-            width: 560px;
-            height: 360px;
-        }
-
-        #play, #stop{
-            display: inline-block;
-            padding: 16px;
-            border:1px solid #000;
-            border-radius: 5px;
-        }
-        iframe{display: none;}
-    </style>
+    <link rel="stylesheet" href="styles\stilos.css">
 </head>
-<body>
-    <h1>Dibujando con los eventos del mouse</h1>
-    <canvas id="myPics" width="560" height="360"></canvas>
-    <div id="despertador">
-        <span id="play">play</span>
-        <span id="stop">stop</span>
+<body onload="inicialize();">
+    <!-- <h1>Dibujando con los eventos del mouse</h1> -->
+    <canvas id="canvas" width="700" height="300"></canvas>
+    <!-- <div id="despertador"> -->
+        <!-- <span id="play">play</span> -->
+        <!-- <span id="stop">stop</span> -->
         <!-- <iframe src="audio/Julieta Venegas - Lento.mp3" controls></iframe>         -->
-    </div>
-    <script src="scripts/scriptEventoMouse.js"></script>    
-    <script src="scripts/scriptMusica.js"></script>    
+    <!-- </div> -->
+    <!-- <script src="scripts/scriptMusica.js"></script>     -->
 </body>
 </html>

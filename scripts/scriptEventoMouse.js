@@ -5,22 +5,22 @@ let y = 0;
 var img = new Image();
 img.src = "imgs/salon-sofa-rosa-4.jpg";
 
-const myPics = document.getElementById('myPics');
-const context = myPics.getContext('2d');
+const canvas = document.getElementById('canvas');
+const context = canvas.getContext('2d');
 img.onload = function(){
-    myPics.drawImage(img, 0, 0);
+    canvas.drawImage(img, 0, 0);
 }
 
 // evento.offsetX, event.offsetY da el offset (x,y) desde la esquina del canvas
 // agrega el evento escuchador para mousedown, mousemove, and mouseup
-myPics.addEventListener(
+canvas.addEventListener(
     'mousedown', e =>{
         x = e.offsetX;
         y = e.offsetY;
         isDrawing = true;
     }
 );
-myPics.addEventListener(
+canvas.addEventListener(
     'mousemove', e =>{
         if (isDrawing === true){
             drawLine(context, x, y, e.offsetX, e.offsetY);
