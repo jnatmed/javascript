@@ -7,6 +7,7 @@ document.addEventListener('keydown', function(evento){
             nube.velocidad = 2;
             cactus.x = ancho + 100;
             nube.x = ancho + 100;
+            nivel.marcador = 0;
             nivel.muerto = false;
         }
     }
@@ -64,9 +65,9 @@ var trex = {y: suelo,
             salto:28, 
             vymax:9, 
             saltando:false};
-var nivel = {velocidad:6, puntuacion: 0, muerto: false};
+var nivel = {velocidad:9, marcador: 0, muerto: false};
 var cactus = {x: ancho + 100,y: suelo-25}; 
-var nube = {x: 400, y: 100, velocidad: 2};
+var nube = {x: 400, y: 100, velocidad: 3};
 var suelog = {x:0, y: suelo + 30};
 
 function dibujaRex(){
@@ -97,6 +98,7 @@ function logicaSuelo(){
 function logicaCactus(){
     if (cactus.x < - 100){
         cactus.x = ancho + 100;
+        nivel.marcador++;
     }else{
         cactus.x -= nivel.velocidad;
     }
@@ -143,6 +145,17 @@ function colision(){
     }
 }
 
+function puntuacion(){
+    ctx.font = "30px impact";
+    ctx.fillStyle = "#555555";
+    ctx.fillText(`${nivel.marcador}`, 600,50);
+
+    if(nivel.muerto == true){
+        ctx.font = "60px impact";
+        ctx.fillText(`GAME OVER`,240,150);
+    }
+}
+
 //  BUCLE PRINCIPAL
 
 /**
@@ -166,6 +179,7 @@ function principal(){
     dibujaCactus();
     dibujaNube();
     dibujaRex();
+    puntuacion();
 }
 
 
